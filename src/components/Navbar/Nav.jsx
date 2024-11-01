@@ -107,15 +107,14 @@ function Nav(){
                   navItem.name === 'Past Editions' && handleEditionsSubMenu();
                  }}
               >
-                <link to={navItem.href}>
+                <Link to={navItem.href} onClick={handleMobileMenu}>
                   <span className='flex'>
                     {navItem.name}
                     {(navItem.name === 'About') ? (!aboutSubMenu ? <ChevronDown /> : <ChevronUp />) : ""}
                     {(navItem.name === 'Call for Papers') ? (!cfpSubMenu ? <ChevronDown /> : <ChevronUp />) : ""}
                     {(navItem.name == 'Past Editions') ? (!editionsSubMenu ? <ChevronDown /> : <ChevronUp />) : ""}
                   </span>
-                
-                </link>
+                </Link>
                 
                 {navItem.name === 'About' && aboutSubMenu && createMobileSubMenu(aboutSubmenuItems)}
                 {navItem.name === 'Call for Papers' && cfpSubMenu && createMobileSubMenu(cfpSubmenuItems)}
